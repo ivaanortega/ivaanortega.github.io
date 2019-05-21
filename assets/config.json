@@ -1,0 +1,14 @@
+{
+  "stg":[
+    {
+      "numberOfBalls": 12,
+      "pointBarHeight": 10,
+      "MaxPlayTime": 9,
+      "pathBalls": "./assets/images/balls/ball{$i}.png",
+      "ballsSrpriteLength": 10,
+      "bgPlayImg": "./assets/images/bgFoot.jpg",
+      "bgIntro": "./assets/images/gbInici.png",
+      "cursor": "./assets/images/gloves.png"
+    }
+  ]
+}

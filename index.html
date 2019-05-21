@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UVIC KEEPER</title>
+    <script src="../p5.min.js"></script>
+    <script src="../addons/p5.dom.min.js"></script>
+    <script src="../addons/p5.sound.min.js"></script>
+    <script src="sketch.js"></script>
+    <script src="assets/scripts/classes/Balls.js"></script>
+    <script src="assets/scripts/classes/GameController.js"></script>
+
+
+    <link rel="stylesheet" href="assets/styles/main.css">
+
+
+
+  </head>
+  <body>
+    <img id="logo" src="assets/images/logoGame.png">
+
+    <div id="parent">
+      <div id="game">
+        <img id="btnControls" src="assets/images/controls.png">
+        <img id="btnCredits" class="credits" src="assets/images/trainer.png">
+      </div>
+    </div>
+
+    <div id="modalCredits" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h1>Credits:</h1>
+        <p>Game created by Ivan Ortega and Alejandro Ruiz</p>
+      </div>
+
+    </div>
+
+    <div id="modalControls" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h1>Controls:</h1>
+        <p>play</p>
+      </div>
+
+    </div>
+
+
+
+    <script>
+
+        // Get the modal
+        var modalCredits = document.getElementById("modalCredits");
+        var modalControls = document.getElementById("modalControls");
+
+        // Get the button that opens the modal
+        var btnCredits = document.getElementById("btnCredits");
+        var btnControls = document.getElementById("btnControls");
+
+        // Get the <span> element that closes the modal
+        var span = document.querySelectorAll(".close");
+
+        for (var i = 0; i < span.length; i++) {
+            span[i].addEventListener('click', function(event) {
+                modalCredits.style.display = "none";
+                modalControls.style.display = "none";
+            });
+        }
+
+
+        // When the user clicks the button, open the modal
+        btnCredits.onclick = function() {
+            modalCredits.style.display = "block";
+
+        }
+
+        btnControls.onclick = function() {
+            modalControls.style.display = "block";
+
+        }
+
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modalCredits) {
+                modalCredits.style.display = "none";
+            }else if(event.target == modalControls) {
+                modalControls.style.display = "none";
+            }
+        }
+    </script>
+
+  </body>
+</html>
