@@ -18,7 +18,7 @@ class GameController {
         }else if(this.state === 1){
             background(bgPlayImg);
         }else{
-            background(255);
+            background(gameOverImg);
         }
     }
 
@@ -29,6 +29,10 @@ class GameController {
         this.createBalls(20,50);
     }
     gameOver(){
+        this.getMaxPuntuation();
+        this.state = 2;
+    }
+    getMaxPuntuation(){
         if(localStorage["puntuation"] === undefined){
             localStorage["puntuation"] = this.puntuation;
         }else{
@@ -38,9 +42,9 @@ class GameController {
         }
 
         this.bestScore = localStorage["puntuation"];
-        this.state = 2;
-    }
 
+        return this.bestScore;
+    }
     printUI(){
         switch(GC.state){
             case 0:
@@ -65,18 +69,18 @@ class GameController {
             case 2:
 
                 let margin = 0;
-                textSize(70);
+                textSize(90);
                 fill(0);
                 stroke(0);
                 textAlign(CENTER, CENTER);
-                text('Game Over', 0, height/4, width);
+                //text('Game Over', 0, height/4, width);
 
 
                 textSize(40);
-                fill(0);
+                fill(255);
                 stroke(0);
                 textAlign(CENTER, CENTER);
-                margin += 70;
+                margin += 150;
                 text('Your Score: ' + this.puntuation, 0, (height/4) + margin, width);
 
 
@@ -85,13 +89,13 @@ class GameController {
                 stroke(0);
                 textAlign(CENTER, CENTER);
                 margin += 70;
-                text('Best Score: ' + this.bestScore, 0, (height/4) + margin, width);
+                //text('Best Score: ' + this.bestScore, 0, (height/4) + margin, width);
 
-                textSize(16);
+                textSize(22);
                 fill(50);
                 stroke(0);
                 textAlign(CENTER, CENTER);
-                text("Press 'r' to restart! / Press 'm' to return menu!", 0, (height - 30), width);
+                //text("Press 'r' to restart! / Press 'm' to return menu!", 0, (height - 30), width);
 
                 break;
         }

@@ -8,7 +8,8 @@ let GC; //Game controller
 let cursorStr; //Cursor path image
 let sounds = [];
 
-
+let imgCursor;
+let gameOverImg;
 
 function preload(){
     loadJSON('./assets/config.json',carregagt);
@@ -25,11 +26,12 @@ function carregagt(settings){
 
     bgPlayImg = loadImage(stgs.bgPlayImg);
     bgIntro = loadImage(stgs.bgIntro);
-
+    imgCursor  = loadImage(stgs.cursor);
     cursorStr = stgs.cursor;
 
-    sounds[0] = loadSound('./assets/music/catch.mp3');
-    sounds[1] = loadSound('./assets/music/miss2.mp3');
+    sounds[0] = loadSound(stgs.catchMp3);
+    sounds[1] = loadSound(stgs.missMp3);
+    gameOverImg = loadImage(stgs.gameOverImg);
 }
 function setup() {
 
@@ -37,7 +39,8 @@ function setup() {
     cnv.parent("game");
     frameRate(60);
 
-    cursor(cursorStr);
+    noCursor();
+    //cursor(cursorStr);
     //cursor(ARROW);
 
     //We create the balls
@@ -45,6 +48,8 @@ function setup() {
 
     bgPlayImg.loadPixels();
     bgIntro.loadPixels();
+    imgCursor.loadPixels();
+    gameOverImg.loadPixels();
 }
 
 function draw() {
@@ -65,6 +70,13 @@ function draw() {
     }
 
     GC.printUI();
+
+    imageMode(CENTER);
+
+    const texts = select('#idPuntuation');
+    texts.html('Best Score: ' + GC.getMaxPuntuation());
+
+    image(imgCursor,mouseX,mouseY);
 }
 
 function keyTyped() {

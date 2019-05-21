@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UVIC KEEPER</title>
 
     <script src="assets/scripts/p5.min.js"></script>
-    
+
     <script src="assets/addons/p5.dom.min.js"></script>
     <script src="assets/addons/p5.sound.min.js"></script>
 
@@ -16,16 +16,23 @@
 
 
     <link rel="stylesheet" href="assets/styles/main.css">
-
-
-
   </head>
+
   <body>
     <img id="logo" src="assets/images/logoGame.png">
 
     <div id="parent">
       <div id="game">
         <img id="btnControls" src="assets/images/controls.png">
+        <div id="divScore">
+            <div id="childScoreAbs">
+              <img  class="stars-left" src="assets/images/stars.png">
+              <img  class="stars-right" src="assets/images/stars.png">
+              <p id="idPuntuation">Best Score: 0</p>
+            </div>
+        </div>
+
+
         <img id="btnCredits" class="credits" src="assets/images/trainer.png">
       </div>
     </div>
@@ -35,7 +42,7 @@
       <!-- Modal content -->
       <div class="modal-content">
         <span class="close">&times;</span>
-        <h1>Credits:</h1>
+        <h1>Credits</h1>
         <p>Game created by Ivan Ortega and Alejandro Ruiz</p>
       </div>
 
@@ -46,56 +53,25 @@
       <!-- Modal content -->
       <div class="modal-content">
         <span class="close">&times;</span>
-        <h1>Controls:</h1>
-        <p>play</p>
+        <h1>Controls</h1>
+        <ul>
+          <li>'S' To start he game.</li>
+          <li>'R' To restart the game.</li>
+          <li>'M' To return to menu.</li>
+        </ul>
+
+        <h2>How to play</h2>
+        <ul>
+          <li>You have to stop as many balls as you can. Be careful, if you fail, time will be reduced.</li>
+          <li>When the time reaches 0, the game will end.</li>
+
+        </ul>
       </div>
 
     </div>
 
+    <script src="assets/scripts/modals.js"></script>
 
-
-    <script>
-
-        // Get the modal
-        var modalCredits = document.getElementById("modalCredits");
-        var modalControls = document.getElementById("modalControls");
-
-        // Get the button that opens the modal
-        var btnCredits = document.getElementById("btnCredits");
-        var btnControls = document.getElementById("btnControls");
-
-        // Get the <span> element that closes the modal
-        var span = document.querySelectorAll(".close");
-
-        for (var i = 0; i < span.length; i++) {
-            span[i].addEventListener('click', function(event) {
-                modalCredits.style.display = "none";
-                modalControls.style.display = "none";
-            });
-        }
-
-
-        // When the user clicks the button, open the modal
-        btnCredits.onclick = function() {
-            modalCredits.style.display = "block";
-
-        }
-
-        btnControls.onclick = function() {
-            modalControls.style.display = "block";
-
-        }
-
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-            if (event.target == modalCredits) {
-                modalCredits.style.display = "none";
-            }else if(event.target == modalControls) {
-                modalControls.style.display = "none";
-            }
-        }
-    </script>
 
   </body>
 </html>

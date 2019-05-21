@@ -25,7 +25,8 @@ html{
     margin: 0 auto;
     padding-bottom: 60px;
     margin-bottom: 30px;
-
+    background-color: black;
+    border-radius: 20px;
 }
 #logo{
     display: block;
@@ -37,17 +38,38 @@ html{
 #btnControls{
     height: 60px;
     position: absolute;
-    bottom: 0;
-    right:0;
+    bottom: 10px;
+    right:10px;
 }
 .credits{
     height: 60px;
     position: absolute;
-    bottom: 0;
-    left:0;
+    bottom: 10px;
+    left:10px;
 }
 
 
+.stars-left{
+    height: 30px;
+    left: -40px;
+    position:absolute;
+}
+.stars-right{
+    height: 30px;
+    right: -40px;
+    position:absolute;
+}
+#childScoreAbs{
+    position:relative;
+}
+
+#divScore{
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    height:60px;
+    transform: translate(-50%,0);
+}
 
 .modal {
     display: none; /* Hidden by default */
@@ -70,6 +92,7 @@ html{
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
+    border-radius: 10px;
 }
 
 /* The Close Button */
@@ -85,4 +108,11 @@ html{
     color: #000;
     text-decoration: none;
     cursor: pointer;
+}
+
+#idPuntuation{
+
+
+    color: white;
+    font-size: 30px;
 }

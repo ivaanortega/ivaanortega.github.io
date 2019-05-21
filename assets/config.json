@@ -8,7 +8,10 @@
       "ballsSrpriteLength": 10,
       "bgPlayImg": "./assets/images/bgFoot.jpg",
       "bgIntro": "./assets/images/gbInici.png",
-      "cursor": "./assets/images/gloves.png"
+      "cursor": "./assets/images/gloves.png",
+      "gameOverImg": "./assets/images/gameOver.png",
+      "catchMp3": "./assets/music/catch.mp3",
+      "missMp3": "./assets/music/miss.mp3"
     }
   ]
 }
